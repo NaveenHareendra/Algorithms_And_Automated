@@ -1,0 +1,118 @@
+
+FUNCTION MaxHeapify()
+
+FUNCTION insertMaxHeapSort()
+
+//validFiles[i][3][len]
+
+FUNCTION checkFileName(pos, root, files):
+    // fileName = convert(path) //converts can be different to language to language, 
+    //                         //the OS library method for extracting file name from a path
+
+
+    i=1 // just in algorithm language i=1 means 0th index...
+    for fileName in len(files):
+        FOR index in length(fileName):
+             IF fileName[index]!= "_" and (fileName[index]<48 or fileName[index]>57): //Should validate to be not first index(later think of...)
+                 invalidFlag = -1
+             
+             IF fileName[index] = "_":
+                 break
+             ELSE
+                 charCheck +=  fileName[index]
+
+        IF charCheck[0] = "0" and length(charCheck) > 1 and invalidFlag != -1:
+            validFiles[pos][2][i] = charCheck[remove_index_1()]
+            
+            validFiles[pos][3][i] = renameFile(fileName) // Renaming can be on O(C) time each with 1 from development view
+                                //, can be of different from language to language
+            i=i+1
+            // insertHeapSort(fileName)//Algorithm should be in O(n lg n) time complexity or better...
+            
+        ELSE IF invalidFlag = -1:
+            error "This file format is invalid"
+            invalidFile[n] = Append(root+fileName)
+            n=n+1
+        ELSE
+            validFiles[pos][2][i] = charCheck
+            validFiles[pos][3][i] = fileName[i]
+            i=i+1
+
+        invalidFlag=0
+
+    if(len(files) != len(invalidFile)):
+        validFiles[pos][1][1] = root
+        
+        return pos + 1
+     
+    return pos
+        // ELSE
+        //     insertHeapSort(fileName)//Algorithm should be in O(n lg n) time complexity or better...
+
+//3D array
+[
+    FileHeap : [number of roots][number of file number suffix on each root (i)][number of file names  on each root (i)]
+    1,1,1 => root 1 , key 1
+    1,1,2 => root 1 , key 2
+    1,2,1 => root 1 , file name 1(relevant to key 1)
+    1,2,2 => root 1 , file name 2(relevant to key 2)
+    n = n
+]
+//3 in here in code means 2...
+FUNCTION exchangePos(Files, i, largest):
+    temp = Files[pos][2][i]
+    Files[pos][2][i] = Files[pos][2][largest]
+    Files[pos][2][largest] = Files[pos][2][temp]
+    //Extra step to exchange filenames as well
+    temp = Files[pos][3][i]
+    Files[pos][3][i] = Files[pos][3][largest]
+    Files[pos][3][largest] = Files[pos][3][temp]
+
+
+    //Sorting can be done in O(n lg n) time complexity or better...
+    //Sorting can be of different from language to language    
+    //Quicksort Randomised runs at best case Theta(n lg n) and worst case Theta(n^2)
+    // in our case we have groups of k to be sorted lets say
+    //k's j will vary however k*theta(j lg j)[+c is ignored ] is our real complexity expected
+FUNCTION Quicksort(Files, p, r):
+    q=0
+    if p<r:
+        q=Partition(Files, p, r)
+        Quicksort(Files, p, q-1)
+        Quicksort(Files, q+1, r)
+
+FUNCTION Partition(Files, p, r):
+    x = Files[p][2][r]
+
+    i = p-1
+    beforePivot = (r-1)
+
+    for j=p to beforePivot:
+        if Files[p]<=x
+            i+=1
+            exchange Files, i, j
+    exchange Files, i+1, r
+    return i+1
+
+FUNCTION RandomizedPartition(Files, p, r):
+    i =random.randint(p,r)
+    exchange Files, r, i
+    return Partition(Files, p, r)
+
+
+//Matrix for each directory: [(directory paths)     ]
+//                             [file name          ]       
+//Below is the algorithm for creating a merge file 
+FUNCTION BuildMergeFile(path):
+    opendirectory()
+    
+    FOR root, directory, files in walk down directory tree:
+
+        IF files[] is null:
+            start next iteration
+        
+        pos=CheckFileName(pos,root, files[])
+        
+
+    FOR i in RANGE(len(self.validFiles)):   
+        print("Valid Files: "+str(self.validFiles[i])+"\n\n")
