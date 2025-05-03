@@ -6,4 +6,4 @@
 <li>Contains some algorithm and another simple automation that was developed by me</li>
 
 <h3>  ************************ MADE WITH <3 LOVE ************************  </h3> 
-<h5> Well, not everything in this world are public :D </h5>
+<center> Well, not everything in this world are public :D </center>
