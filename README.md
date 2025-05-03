@@ -5,5 +5,5 @@
 
 <li>Contains some algorithm and another simple automation that was developed by me</li>
 
-<h3>  ************************ MADE WITH <3 LOVE ************************  </h3> 
+<h3>  ************************ I DO WITH <3 LOVE ************************  </h3> 
 <center> Well, not everything in this world are public :D </center>
