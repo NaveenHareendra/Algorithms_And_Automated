@@ -1,0 +1,20 @@
+FUNCTION checkFileName(path):
+    fileName = convert(path) //converts can be different to language to language, 
+                            //the OS library method for extracting file name from a path
+    FOR index in length(fileName):
+        IF fileName[index] and (fileName[index]<48 or fileName[index]>57):
+            invalidFlag = -1
+        
+        IF fileName[index] = "_":
+            break
+        ELSE
+            charCheck +=  fileName[index]
+
+    IF charCheck[0] = "0" and length(charCheck) > 1 and invalidFlag != -1:
+        renameFile(fileName) // Renaming can be on O(C) time each with 1 from development view
+                            //, can be of different from language to language
+        insertHeapSort(fileName)//Algorithm should be in O(n lg n) time complexity or better...
+    ELSE IF invalidFlag = -1:
+        error "This file format is invalid"
+    ELSE
+        insertHeapSort(fileName)
