@@ -67,7 +67,7 @@ class ScriptGen:
 
         invalidTablePrintScript=	"DECLARE @tableNameVar varchar(50)\n"\
 	"DECLARE tableNameCursor  CURSOR FOR select nameOfTable  from #tableName \n OPEN tableNameCursor\nFETCH NEXT FROM tableNameCursor INTO @tableNameVar \n"\
-	"WHILE @@FETCH_STATUS = 0  \nBEGIN  	\n\nIF NOT EXISTS(select 1 from sys.objects obj where name =@tableNameVar and obj.schema_id=(select schema_id from sys.schemas where name='PeoplesHR')) BEGIN\n	" \
+	"WHILE @@FETCH_STATUS = 0  \nBEGIN  	\n\nIF NOT EXISTS(select 1 from sys.objects obj where name =@tableNameVar and obj.schema_id=(select schema_id from sys.schemas where name='<DBUserId>')) BEGIN\n	" \
     " PRINT 'Table is not available at the Database: '+@tableNameVar\nEND;\n  FETCH NEXT FROM tableNameCursor INTO @tableNameVar\n  end;\n  close tableNameCursor\n  deallocate tableNameCursor;\n\n";
         
         pathName=""
