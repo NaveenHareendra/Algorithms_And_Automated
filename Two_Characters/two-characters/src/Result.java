@@ -1,3 +1,7 @@
+/*
+ * Solution is 'alternate' function.
+ *
+ */
 class Result {
     int sizeOfHashArray = 29;
     private int[] arr = new int[sizeOfHashArray] ;
@@ -87,12 +91,7 @@ class Result {
         }
 
     }
-    /*
-     * Complete the 'alternate' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts STRING s as parameter.
-     */
+
     public void printAll(){
         System.out.println("Printing all...");
         for(int i=0; i<29;i++){
