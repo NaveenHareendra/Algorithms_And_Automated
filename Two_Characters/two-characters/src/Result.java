@@ -102,9 +102,9 @@ class Result {
         }
         System.out.println();
     }
+
     public static int alternate(String s) {
         Result res = new Result();
-        // Write your code here
         s=res.removeDuplicates(s);
 
         for(int i=0; i<s.length();i++){
