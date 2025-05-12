@@ -359,7 +359,6 @@ class Result {
     public void InsertInOrderTreeWalk(Tree node){
         if(node!=null){
             InsertInOrderTreeWalk(node.leftChild);
-            //This algorithm is under process still...
             this.nodeInsert(node);
             InsertInOrderTreeWalk(node.rightChild);
         }
@@ -376,8 +375,6 @@ class Result {
     public void PostOrderTreeWalk(Tree node){
         if(node!=null){
             PostOrderTreeWalk(node.rightChild);
-            //This algorithm is under process still...
-
             System.out.println("Key "+node.key);
             System.out.println("value "+(char)node.value);
             System.out.println("Indexes:");
