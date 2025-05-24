@@ -7,10 +7,10 @@ higher memory (stack method)> two pointer method</li>
  
 This will run at O(m) average, don't consider to be the most efficient iterative method also, can be improved for sure as well.<br/>
 
-At the end of the day best method best method:rescursive - O(n) time<br/>
-procedure (node)
-  if node!=null
-      procedure(node.left)
-      print
-      procedure(node.right)
+At the end of the day best method best method:rescursive - O(n) time<br/><br/>
+procedure (node)<br/>
+  if node!=null<br/>
+      procedure(node.left)<br/>
+      print<br/>
+      procedure(node.right)<br/>
 
