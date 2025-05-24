@@ -4,56 +4,6 @@
 2. parent
 3. right-most-node
 
-InOrder-tree-walk-iter(nodeParent)
-    Node=nodeParent
-    masterParent = nodeParent
-    WHILE nodeParent!=null
-        if  nodeParent!= Node
-            Node = left-most-node(Node)
-
-        Node = right-most-node(Node, lastNode, masterParent)
-        
-        if( Node.left=null)
-            if nodeParent!= Node.parent or masterParent!=Node.parent
-                masterParent = nodeParent
-            
-            lastNode = Node
-            nodeParent=Node.parent
-            Node = Node.parent
-
-left-most-node(leftNode)
-    WHILE leftNode.left != NULL
-        leftNode = leftNode.left
-    ENDWHILE
-    return leftNode
-
-
-
-
-// doing with a stack would look like follows:
-//Theoritically this is how the stack used like method will be used ...
-Inorder-Iter-stackMode(Node)
-    Stack-Insert(Node)
-    while stackNode!=null
-        while Node.left !=null
-            Node=Node.left
-            Stack-Insert(Node)
-
-        stackNode = stack.pop()
-
-        print stackNode
-        stackNode = stackNode.right
-
-        while stackNode!=null & stackNode.right!=null & stackNode.left = null
-            stackNode = stackNode.right
-            if stackNode.left = null
-                print stackNode
-        Node = stackNode  
-            
-        
-        // Node = Node.parent
-            
-
 //The two pointer method
 //The algorithm runs at O(m) time, not the best
 //Recursive method will work way better always..
@@ -125,3 +75,36 @@ Inorder-Iter(Node)
         // else childX = childX.parent
     while mainP!=null 
         
+
+left-most-node(leftNode)
+    WHILE leftNode.left != NULL
+        leftNode = leftNode.left
+    ENDWHILE
+    return leftNode
+
+
+
+
+// doing with a stack would look like follows:
+//Theoritically this is how the stack used like method will be used ...
+Inorder-Iter-stackMode(Node)
+    Stack-Insert(Node)
+    while stackNode!=null
+        while Node.left !=null
+            Node=Node.left
+            Stack-Insert(Node)
+
+        stackNode = stack.pop()
+
+        print stackNode
+        stackNode = stackNode.right
+
+        while stackNode!=null & stackNode.right!=null & stackNode.left = null
+            stackNode = stackNode.right
+            if stackNode.left = null
+                print stackNode
+        Node = stackNode  
+            
+        
+        // Node = Node.parent
+            
