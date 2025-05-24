@@ -1,0 +1,127 @@
+--assume we are at the leftest
+
+1. left-most-node(Node)
+2. parent
+3. right-most-node
+
+InOrder-tree-walk-iter(nodeParent)
+    Node=nodeParent
+    masterParent = nodeParent
+    WHILE nodeParent!=null
+        if  nodeParent!= Node
+            Node = left-most-node(Node)
+
+        Node = right-most-node(Node, lastNode, masterParent)
+        
+        if( Node.left=null)
+            if nodeParent!= Node.parent or masterParent!=Node.parent
+                masterParent = nodeParent
+            
+            lastNode = Node
+            nodeParent=Node.parent
+            Node = Node.parent
+
+left-most-node(leftNode)
+    WHILE leftNode.left != NULL
+        leftNode = leftNode.left
+    ENDWHILE
+    return leftNode
+
+
+
+
+// doing with a stack would look like follows:
+//Theoritically this is how the stack used like method will be used ...
+Inorder-Iter-stackMode(Node)
+    Stack-Insert(Node)
+    while stackNode!=null
+        while Node.left !=null
+            Node=Node.left
+            Stack-Insert(Node)
+
+        stackNode = stack.pop()
+
+        print stackNode
+        stackNode = stackNode.right
+
+        while stackNode!=null & stackNode.right!=null & stackNode.left = null
+            stackNode = stackNode.right
+            if stackNode.left = null
+                print stackNode
+        Node = stackNode  
+            
+        
+        // Node = Node.parent
+            
+
+//The two pointer method
+//The algorithm runs at O(m) time, not the best
+//Recursive method will work way better always..
+//Implementation in java file method name: InOrderTreeWalkIterative(...)
+Inorder-Iter(Node)
+    mainP = Node
+    while mainP.left != null
+        mainP = mainP.left
+
+    childP = mainP
+    childX = mainP
+    do
+    //Looks like the usage of pointers is quite wrong ... but the idea seems to be fine..
+    //Need to work on this...
+        while childX != mainP  or childP!=null
+            if childP.right = null
+                //Below algorithm would take childX to mainP direction
+                while mainP != childX & childP != childX
+                    if childX.right = childP
+                        if childX.parent !=  mainP
+                            childP = childX
+                            childX = childX.parent
+                        else print childP
+                            childP = mainP
+                            childX = mainP
+                    else if childX.left = childP
+                            childP = childX
+                    else    print childP
+                            childP = childP.parent
+
+            if childP!=mainP
+                if childP.left = null 
+                    print childP
+                    if childP.right!=null
+                        childP = childP.right
+                    else childP = mainP
+                else 
+                    if childX != childP
+                        if childP.left!=null
+                            childX = childP
+                            childP = childP.left
+                    else 
+                        if childP.right!=null
+                            print childP
+                            childP = childP.right
+                        else childP                    
+
+            // else if childX!=mainP & childX=childP & childP.right != null
+            //     print childP
+            //     childP = childP.right
+            // else if childX!=mainP 
+            //     childX = childP
+            //     childP = childP.left
+
+        if childX.parent!= null
+            if  mainP.parent.right!=null
+                mainP = mainP.parent
+                print mainP
+                childX = mainP
+            else mainP = mainP.parent
+                 childX =mainP
+                // mainP = mainP.parent
+                // childP = mainP.right
+                // childX = mainP
+        else
+            mainP = null
+        // el-if childX.parent.right !=null
+        //     childX = childX.parent.right
+        // else childX = childX.parent
+    while mainP!=null 
+        
