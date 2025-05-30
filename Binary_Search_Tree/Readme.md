@@ -8,7 +8,7 @@ higher memory (stack method)> two pointer method</li>
  
 This will run at O(m) average, don't consider to be the most efficient iterative method also, can be improved for sure as well.<br/>
 
-At the end of the day best method best method:rescursive - Theta(n) time<br/><br/>
+At the end of the day best method :rescursive - Theta(n) time<br/><br/>
 procedure (node)<br/>
   if node!=null<br/>
       procedure(node.left)<br/>
