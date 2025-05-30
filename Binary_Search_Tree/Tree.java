@@ -246,7 +246,7 @@ public class Tree {
     //Successor of a node x is node with smallest key greater than x.key
     public Node TreeSuccessor(Node node){
         if(node.right!=null){
-            return TreeMinimum(node);
+            return TreeMinimum(node.right);
         }
 
         Node trailingPoint=node.parent;
