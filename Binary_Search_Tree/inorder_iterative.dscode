@@ -16,7 +16,6 @@ Inorder-Iter(Node)
     childP = mainP
     childX = mainP
     do
-    //Looks like the usage of pointers is quite wrong ... but the idea seems to be fine..
     //Need to work on this...
         while childX != mainP  or childP!=null
             if childP.right = null
